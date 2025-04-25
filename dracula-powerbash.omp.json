@@ -1,0 +1,90 @@
+{
+    "$schema": "https://raw.githubusercontent.com/JanDeDobbeleer/oh-my-posh/main/themes/schema.json",
+    "blocks": [
+        {
+            "alignment": "left",
+            "segments": [
+                {
+                    "background": "#455175",
+                    "foreground": "#f8f8f2",
+                    "style": "diamond",
+                    "leading_diamond": "",
+                    "template": " {{ .UserName }}",
+                    "type": "session"
+                },
+                {
+                    "background": "#455175",
+                    "foreground": "#f8f8f2",
+                    "style": "diamond",
+                    "leading_diamond": "",
+                    "type": "shell",
+                    "properties": {
+                        "mapped_shell_names": {
+                            "bash": "\udb84\udd83",
+                            "pwsh": "\uebc7"
+                        }
+                    }
+                },
+                {
+                    "background": "#519867",
+                    "foreground": "#f8f8f2",
+                    "powerline_symbol": "\ue0b0",
+                    "properties": {
+                        "fetch_status": true,
+                        "fetch_upstream_icon": true
+                    },
+                    "style": "powerline",
+                    "template": " {{ .UpstreamIcon }} {{ .HEAD }} {{ .BranchStatus }}{{ if .Working.Changed }} \uf044 {{ .Working.String }}{{ end }}{{ if and (.Staging.Changed) (.Working.Changed) }} | {{ end }}{{ if .Staging.Changed }} \uf046 {{ .Staging.String }}{{ end }}{{ if gt .StashCount 0}} \uf692 {{ .StashCount }}{{ end }}{{ if gt .WorktreeCount 0}} \uf1bb {{ .WorktreeCount }}{{ end }} ",
+                    "type": "git"
+                },
+                {
+                    "background": "#3d89c7",
+                    "foreground": "#ffffff",
+                    "powerline_symbol": "\ue0b0",
+                    "style": "powerline",
+                    "type": "dotnet",
+                    "template": " \ue70c {{ .Full }} "
+                },
+                {
+                    "background": "#3d89c7",
+                    "foreground": "#ffffff",
+                    "powerline_symbol": "\ue0b0",
+                    "style": "powerline",
+                    "template": " \ufcd1 {{ .Full }} ",
+                    "type": "go"
+                },
+                {
+                    "background": "#0086a4",
+                    "foreground": "#f8f8f2",
+                    "powerline_symbol": "\ue0b0",
+                    "style": "powerline",
+                    "template": " \ue718 {{ if .PackageManagerIcon }}{{ .PackageManagerIcon }} {{ end }}{{ .Full }} ",
+                    "type": "node"
+                }
+            ],
+            "type": "prompt"
+        },
+        {
+            "alignment": "left",
+            "newline": true,
+            "segments": [
+                {
+                    "background": "#8967b8",
+                    "foreground": "#f8f8f2",
+                    "properties": {
+                        "style": "agnoster_short",
+                        "max_depth": 2
+                    },
+                    "style": "diamond",
+                    "leading_diamond": "",
+                    "trailing_diamond": "\ue0b0",
+                    "template": " \uea83 {{ .Path }} ",
+                    "type": "path"
+                }
+            ],
+            "type": "prompt"
+        }
+    ],
+    "final_space": true,
+    "version": 2
+}

@@ -1,0 +1,83 @@
+{
+  "$schema": "https://raw.githubusercontent.com/JanDeDobbeleer/oh-my-posh/main/themes/schema.json",
+  "blocks": [
+    {
+      "alignment": "left",
+      "type": "prompt",
+      "segments": [
+        {
+          "foreground": "#6497ff",
+          "style": "plain",
+          "template": "\u2554[<#ffffff>\ueb99</> {{ .UserName }} on <#ffffff>\uf108</> {{ .HostName }}]",
+          "type": "session"
+        },
+        {
+          "foreground": "#6497ff",
+          "properties": {
+            "fetch_stash_count": true,
+            "fetch_status": true,
+            "fetch_upstream_icon": true
+          },
+          "style": "plain",
+          "template": "\u2500[<#dada27><#ffffff>{{ .UpstreamIcon }}</> {{ .HEAD }} {{if .BranchStatus }}{{ .BranchStatus }}{{ end }}{{ if .Working.Changed }} <#ffffff>\uf044</> {{ .Working.String }}{{ end }}{{ if and (.Working.Changed) (.Staging.Changed) }} |{{ end }}{{ if .Staging.Changed }} <#ffffff>\uf046</> {{ .Staging.String }}{{ end }}{{ if gt .StashCount 0 }} <#ffffff>\ueb4b</> {{ .StashCount }}{{ end }}</>]",
+          "type": "git"
+        },
+        {
+          "foreground": "#6497ff",
+          "style": "plain",
+          "template": "\u2500[<#ff6a5f><#ffffff>\udb84\udcfe</> {{.Context}}{{if .Namespace}}<#ffffff>::</>{{.Namespace}}{{end}}</>]",
+          "type": "kubectl"
+        }
+      ]
+    },
+    {
+      "alignment": "left",
+      "type": "prompt",
+      "newline": true,
+      "segments": [
+        {
+          "foreground": "#6497ff",
+          "properties": {
+            "style": "full"
+          },
+          "style": "plain",
+          "template": "\u2560[<#ffffff>\ueaf7</> <#00cb80>{{ .Path }}</>]",
+          "type": "path"
+        },
+        {
+          "template": "\u2500[<#ffffff>\ue70c</> {{ .Full }}]",
+          "foreground": "#6497ff",
+          "type": "dotnet",
+          "style": "plain"
+        },
+        {
+          "template": "\u2500[<#ffffff>\ue627</> {{ .Full }}]",
+          "foreground": "#6497ff",
+          "type": "go",
+          "style": "plain"
+        },
+        {
+          "template": "\u2500[<#ffffff>\udb80\udf99</> {{ .Full }}]",
+          "foreground": "#6497ff",
+          "type": "node",
+          "style": "plain"
+        }
+      ]
+    },
+    {
+      "alignment": "left",
+      "type": "prompt",
+      "newline": true,
+      "segments": [
+        {
+          "foreground": "#6497ff",
+          "style": "plain",
+          "template": "\u255a[<#ffffff>$</>]",
+          "type": "text"
+        }
+      ]
+    }
+  ],
+  "final_space": true,
+  "version": 3
+}
